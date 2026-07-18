@@ -1,0 +1,9 @@
+target-version = "py39"
+src = ["src", "tests"]
+
+[lint]
+select = ["E", "F", "W", "I", "UP"]
+ignore = []
+
+[lint.isort]
+known-first-party = ["threadhunter"]

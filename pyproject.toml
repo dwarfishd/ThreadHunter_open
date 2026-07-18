@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "threadhunter"
+version = "0.1.0"
+description = "CLI utility for parsing Telegram channel ads for garment manufacturing"
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.9.0",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0.0",
+    "telethon>=1.34.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+th = "threadhunter.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
